@@ -1,0 +1,15 @@
+{
+  "manifest_version": 3,
+  "name": "uyou todo",
+  "description": "这是一个ToDo list！",
+  "version": "0.1.0",
+  "icons": {
+    "128": "todo_list.png",
+    "48": "todo_list.png",
+    "16": "todo_list.png"
+  },
+  "action": {
+    "default_popup": "dist/index.html",
+    "default_icon": "todo_list.png"
+  }
+}
