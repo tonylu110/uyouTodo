@@ -1,11 +1,13 @@
 import React, {FC, useState} from 'react';
 import './style.scss'
-
 import closeImg from '../../../images/close.png'
 import okImg from '../../../images/ok.png'
 import IProps from "./IProps";
 import moment from "moment";
 import Toast from "../../Toast";
+import LocalStorage from "../../../util/LocalStorage";
+import ITodoList from "../../../interface/ITodoListArray";
+import getOkStyle from "./getOkStyle";
 
 const Item: FC<IProps> = ({
   index,
@@ -13,11 +15,9 @@ const Item: FC<IProps> = ({
   id,
   setOk
 }) => {
-  const [okStyle, setOkStyle] = useState({
-    textDecoration: '',
-    color: ''
-  })
-  const [okState, setOkState] = useState(false)
+  const localStorageTodoList: ITodoList[] = LocalStorage('get')!
+  const [okState, setOkState] = useState(localStorageTodoList[index].ok)
+  const [okStyle, setOkStyle] = useState(getOkStyle(okState))
   const [toastState, setToastState] = useState(false)
 
   const ok = (okState: boolean) => {
