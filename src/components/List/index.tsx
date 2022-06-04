@@ -11,11 +11,13 @@ import moment from "moment";
 const List: FC<IProps> = ({
   showInput,
   setShowInput,
+  todoTime
 }) => {
   FirstLoad()
   const localStorageTodoList: ITodoList[] = LocalStorage('get')!
   const [todoList, setTodoList] = useState(localStorageTodoList)
   const [showOkButton, setShowOkButton] = useState('')
+  const [todoText, setTodoText] = useState('')
 
   const complete = (id: number, isOk: boolean) => {
     todoList[id].ok = isOk
@@ -32,6 +34,22 @@ const List: FC<IProps> = ({
     } else {
       setShowOkButton('')
     }
+    setTodoText(e.target.value)
+  }
+
+  const addTodo = () => {
+    const newToDoList: ITodoList = {
+      text: todoText,
+      id: todoTime,
+      ok: false
+    }
+    todoList.unshift(newToDoList)
+    setTodoList([...todoList])
+    const localStorageSetTodoList: IToDoListData = {
+      data: todoList
+    }
+    LocalStorage('set', localStorageSetTodoList)
+    setShowInput(false)
   }
 
   const cancel = () => {
@@ -43,9 +61,9 @@ const List: FC<IProps> = ({
       {showInput ? (
         <div className='add'>
           <div className='add-time-area'>
-            <span>{moment(new Date().getTime()).format('hh:mm A')}</span>
+            <span>{moment(todoTime).format('hh:mm A')}</span>
             <div className='buttons'>
-              <div className='ok-button' style={{opacity: showOkButton}}>添加</div>
+              <div className='ok-button' style={{opacity: showOkButton}} onClick={addTodo}>添加</div>
               <div className='cancel-button' onClick={cancel}>取消</div>
             </div>
           </div>
