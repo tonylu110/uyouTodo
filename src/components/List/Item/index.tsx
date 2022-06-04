@@ -21,18 +21,11 @@ const Item: FC<IProps> = ({
   const [toastState, setToastState] = useState(false)
 
   const ok = (okState: boolean) => {
+    setOkStyle(getOkStyle(okState))
     if (okState) {
-      setOkStyle({
-        textDecoration: 'line-through',
-        color: '#cebfae'
-      })
       setOkState(true)
       setOk(index, true)
     } else {
-      setOkStyle({
-        textDecoration: '',
-        color: ''
-      })
       setOkState(false)
       setOk(index, false)
     }
