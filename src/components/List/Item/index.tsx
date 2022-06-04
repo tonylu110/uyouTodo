@@ -3,31 +3,29 @@ import './style.scss'
 import closeImg from '../../../images/close.png'
 import okImg from '../../../images/ok.png'
 import IProps from "./IProps";
-import moment from "moment";
 import Toast from "../../Toast";
-import LocalStorage from "../../../util/LocalStorage";
-import ITodoList from "../../../interface/ITodoListArray";
-import getOkStyle from "./getOkStyle";
+import getTime from './getTime';
+import getOkStyle from './getOkStyle';
 
 const Item: FC<IProps> = ({
-  index,
   text,
   id,
-  setOk
+  getOk,
+  setOk,
+  deleteTodo,
 }) => {
-  const localStorageTodoList: ITodoList[] = LocalStorage('get')!
-  const [okState, setOkState] = useState(localStorageTodoList[index].ok)
-  const [okStyle, setOkStyle] = useState(getOkStyle(okState))
+  const [okState, setOkState] = useState(getOk.ok)
+  const [okStyle, setOkStyle] = useState(getOk.style)
   const [toastState, setToastState] = useState(false)
 
   const ok = (okState: boolean) => {
     setOkStyle(getOkStyle(okState))
     if (okState) {
       setOkState(true)
-      setOk(index, true)
+      setOk(id, true)
     } else {
       setOkState(false)
-      setOk(index, false)
+      setOk(id, false)
     }
   }
 
@@ -40,16 +38,20 @@ const Item: FC<IProps> = ({
     })
   }
 
+  const del = (id: number) => {
+    deleteTodo(id)
+  }
+
   return (
     <div className='list-item'>
       <div className='time-area'>
-        <span>{moment(id).format("YYYY-MM-DD")}</span>
+        <span>{getTime(id)}</span>
         <div onClick={copyText}>复制</div>
       </div>
       <span className='item-text' style={okStyle}>
         {text}
       </span>
-      <div className='close-button'>
+      <div className='close-button' onClick={() => del(id)}>
         <img src={closeImg} alt='' />
       </div>
       <div className='ok-button' onClick={() => ok(!okState)}>

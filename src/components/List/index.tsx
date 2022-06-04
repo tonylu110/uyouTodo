@@ -7,6 +7,7 @@ import FirstLoad from "../../util/FirstLoad";
 import ITodoList from "../../interface/ITodoListArray";
 import IToDoListData from "../../interface/IToDoListData";
 import moment from "moment";
+import getOkStyle from './Item/getOkStyle';
 
 const List: FC<IProps> = ({
   showInput,
@@ -20,7 +21,11 @@ const List: FC<IProps> = ({
   const [todoText, setTodoText] = useState('')
 
   const complete = (id: number, isOk: boolean) => {
-    todoList[id].ok = isOk
+    for(let i = 0; i < todoList.length; i++) {
+      if (todoList[i].id === id) {
+        todoList[i].ok = isOk
+      }
+    }
     setTodoList([...todoList])
     const localStorageSetTodoList: IToDoListData = {
       data: todoList
@@ -56,6 +61,19 @@ const List: FC<IProps> = ({
     setShowInput(false)
   }
 
+  const deleteTodo = (id: number) => {    
+    for (let i = 0; i < todoList.length; i++) {
+      if (todoList[i].id === id) {
+        todoList.splice(i, 1)
+      }
+    }
+    setTodoList([...todoList])
+    const localStorageSetTodoList: IToDoListData = {
+      data: todoList
+    }
+    LocalStorage('set', localStorageSetTodoList)
+  }
+
   return (
     <div className='list'>
       {showInput ? (
@@ -73,7 +91,10 @@ const List: FC<IProps> = ({
       {
         todoList.map((item, index) => {
           return (
-            <Item key={index} index={index} text={item.text} id={item.id} setOk={complete} />
+            <Item key={index} text={item.text} id={item.id} setOk={complete} deleteTodo={deleteTodo} getOk={{
+              ok: item.ok,
+              style: getOkStyle(item.ok)
+            }} />
           )
         })
       }
