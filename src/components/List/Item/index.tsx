@@ -1,4 +1,4 @@
-import React, {FC, useState} from 'react';
+import React, {FC, useEffect, useState} from 'react';
 import './style.scss'
 import closeImg from '../../../images/close.png'
 import okImg from '../../../images/ok.png'
@@ -41,6 +41,11 @@ const Item: FC<IProps> = ({
   const del = (id: number) => {
     deleteTodo(id)
   }
+
+  useEffect(() => {
+    setOkState(getOk.ok)
+    setOkStyle(getOk.style)
+  }, [getOk])
 
   return (
     <div className='list-item'>
