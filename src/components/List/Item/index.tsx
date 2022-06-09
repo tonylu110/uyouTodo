@@ -6,6 +6,7 @@ import IProps from "./IProps";
 import Toast from "../../Toast";
 import getTime from './getTime';
 import getOkStyle from './getOkStyle';
+import i18n from './i18n';
 
 const Item: FC<IProps> = ({
   text,
@@ -51,7 +52,7 @@ const Item: FC<IProps> = ({
     <div className='list-item'>
       <div className='time-area'>
         <span>{getTime(id)}</span>
-        <div onClick={copyText}>复制</div>
+        <div onClick={copyText}>{i18n().copyText}</div>
       </div>
       <span className='item-text' style={okStyle}>
         {text}
@@ -62,7 +63,7 @@ const Item: FC<IProps> = ({
       <div className='ok-button' onClick={() => ok(!okState)}>
         <img src={okImg} alt='' />
       </div>
-      {toastState ? <Toast msg='复制成功' /> : null}
+      {toastState ? <Toast msg={i18n().toast} /> : null}
     </div>
   );
 }

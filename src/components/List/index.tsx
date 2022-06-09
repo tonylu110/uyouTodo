@@ -8,6 +8,7 @@ import ITodoList from "../../interface/ITodoListArray";
 import IToDoListData from "../../interface/IToDoListData";
 import moment from "moment";
 import getOkStyle from './Item/getOkStyle';
+import i18n from './i18n';
 
 const List: FC<IProps> = ({
   showInput,
@@ -85,8 +86,8 @@ const List: FC<IProps> = ({
           <div className='add-time-area'>
             <span>{moment(todoTime).format('hh:mm A')}</span>
             <div className='buttons'>
-              <div className='ok-button' style={{opacity: showOkButton}} onClick={addTodo}>添加</div>
-              <div className='cancel-button' onClick={cancel}>取消</div>
+              <div className='ok-button' style={{opacity: showOkButton}} onClick={addTodo}>{i18n().addText}</div>
+              <div className='cancel-button' onClick={cancel}>{i18n().cancelText}</div>
             </div>
           </div>
           <textarea className='add-item-text' rows={4} onKeyUp={(e) => onKeyUp(e)}></textarea>
