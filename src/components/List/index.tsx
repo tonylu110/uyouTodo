@@ -55,10 +55,14 @@ const List: FC<IProps> = ({
     }
     LocalStorage('set', localStorageSetTodoList)
     setShowInput(false)
+    setTodoText('')
+    setShowOkButton('')
   }
 
   const cancel = () => {
     setShowInput(false)
+    setTodoText('')
+    setShowOkButton('')
   }
 
   const deleteTodo = (id: number) => {    

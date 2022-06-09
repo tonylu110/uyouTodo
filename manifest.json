@@ -2,7 +2,7 @@
   "manifest_version": 3,
   "name": "uyou todo",
   "description": "这是一个ToDo list！",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "icons": {
     "128": "todo_list.png",
     "48": "todo_list.png",
