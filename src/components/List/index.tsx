@@ -8,7 +8,7 @@ import ITodoList from "../../interface/ITodoListArray";
 import IToDoListData from "../../interface/IToDoListData";
 import moment from "moment";
 import getOkStyle from './Item/getOkStyle';
-import i18n from './i18n';
+import i18n from '../../i18n';
 
 const List: FC<IProps> = ({
   showInput,

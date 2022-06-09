@@ -1,5 +1,7 @@
 # uyouTodo
  
+English | [中文简体](https://github.com/tonylu110/uyouTodo/tree/main/README/zh_cn)
+
 ## How to use ?
 
 1. Build chrome extension
@@ -13,7 +15,7 @@
     
 2. Chrome web store or edge addons store\
    chrome: [TO CHROME WEB STORE](https://github.com/tonylu110/uyouTodo/releases)\
-   edge: [TO EDGE ADDONS STORE](https://github.com/tonylu110/uyouTodo/releases)
+   edge: [TO EDGE ADDONS STORE](https://microsoftedge.microsoft.com/addons/detail/uyou-todo/efmogbhijocfeiaflifgjjkmfhjoplnp)
 
 3. To release page and download crx\
    [TO RELEASE](https://github.com/tonylu110/uyouTodo/releases)

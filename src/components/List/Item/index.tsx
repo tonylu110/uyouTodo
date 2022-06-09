@@ -6,7 +6,7 @@ import IProps from "./IProps";
 import Toast from "../../Toast";
 import getTime from './getTime';
 import getOkStyle from './getOkStyle';
-import i18n from './i18n';
+import i18n from '../../../i18n';
 
 const Item: FC<IProps> = ({
   text,
@@ -63,7 +63,7 @@ const Item: FC<IProps> = ({
       <div className='ok-button' onClick={() => ok(!okState)}>
         <img src={okImg} alt='' />
       </div>
-      {toastState ? <Toast msg={i18n().toast} /> : null}
+      {toastState ? <Toast msg={i18n().copyToast} /> : null}
     </div>
   );
 }

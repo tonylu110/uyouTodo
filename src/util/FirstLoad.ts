@@ -1,9 +1,9 @@
-import FirstLoadData from "../data/FirstLoadData";
+import i18n from "../i18n";
 import LocalStorage from "./LocalStorage";
 
 const FirstLoad = () => {
   const firstToDo = {
-    data: FirstLoadData()
+    data: i18n().firstLoadData
   }
   if (localStorage.getItem('ToDo') === null) {
     LocalStorage('set', firstToDo)

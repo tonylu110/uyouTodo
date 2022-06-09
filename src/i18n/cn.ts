@@ -1,6 +1,10 @@
-import ITodoList from "../../interface/ITodoListArray"
+import ITodoList from "../interface/ITodoListArray"
 
-const cn: ITodoList[] = [
+const addText = '添加'
+const cancelText = '取消'
+const copyText = '复制'
+const copyToast = '复制成功'
+const firstLoadData: ITodoList[] = [
     {
         text: '欢迎使用 uyou ToDo',
         id: new Date().getTime(),
@@ -23,4 +27,10 @@ const cn: ITodoList[] = [
     }
 ]
 
-export default cn
+export default {
+    addText,
+    cancelText,
+    copyText,
+    copyToast,
+    firstLoadData
+}
