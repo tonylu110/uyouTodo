@@ -14,7 +14,7 @@
     * 选择编译好的文件夹安装
     
 2. 在 chrome 网上应用店或 edge 外接商店下载\
-   chrome：[前往 chrome 网上应用店](https://github.com/tonylu110/uyouTodo/releases)\
+   chrome：[前往 chrome 网上应用店](https://chrome.google.com/webstore/detail/uyou-todo/ejlgjpkidfhbglcliliiolhhjanipojk?hl=zh-CN&authuser=0)\
    edge：[前往 edge 外接商店](https://microsoftedge.microsoft.com/addons/detail/uyou-todo/efmogbhijocfeiaflifgjjkmfhjoplnp)
 
 3. 在 release 页面下载 crx 文件安装\
