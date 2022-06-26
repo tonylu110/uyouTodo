@@ -21,7 +21,7 @@
    [前往 release 页面](https://github.com/tonylu110/uyouTodo/releases)
 
 ## 预览
-![](../../demo/demo1.png)
-![](../../demo/zh_cn/demo2.png)
-![](../../demo/zh_cn/demo3.png)
-![](../../demo/zh_cn/demo4.png)
+![](../demo/demo1.png)
+![](../demo/zh_cn/demo2.png)
+![](../demo/zh_cn/demo3.png)
+![](../demo/zh_cn/demo4.png)

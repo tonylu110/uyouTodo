@@ -1,6 +1,6 @@
 # uyouTodo
  
-English | [中文简体](https://github.com/tonylu110/uyouTodo/tree/main/README/zh_cn)
+English | [中文简体](https://github.com/tonylu110/uyouTodo/blob/main/README/zh_cn.md)
 
 ## How to use ?
 
