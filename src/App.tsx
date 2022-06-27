@@ -9,19 +9,19 @@ function App() {
   const setElement = () => {
     switch (current) {
       case 0: 
-        return <Home setElement={(e: number) => setCurrent(e)} />
+        return <Home setElement={() => setCurrent(1)} />
       case 1:
-        return <Setting />
+        return <Setting setElement={() => setCurrent(0)}/>
       default:
         return null
     }
   }
   return (
-    <>
+    <div className="App">
       {
         setElement()
       }
-    </>
+    </div>
   )
 }
 

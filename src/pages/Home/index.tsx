@@ -13,7 +13,7 @@ const Home = (props: any) => {
 
   return (
     <>
-      <Title setShowInput={complete} setElement={(e: number) => props.setElement(e)} />
+      <Title titleText="uyou Todo" setShowInput={complete} setElement={() => props.setElement()} />
       <List showInput={showInput} setShowInput={complete} todoTime={todoTime} />
     </>
   )
