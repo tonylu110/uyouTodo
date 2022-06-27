@@ -1,10 +1,12 @@
-import React, {FC} from 'react';
+import { FC } from 'react';
 import IProps from "./IProps";
 import './style.scss'
 import plusImg from '../../images/plus.png'
+import settingImg from '../../images/setting.png'
 
 const Title: FC<IProps> = ({
-  setShowInput
+  setShowInput,
+  setElement
 }) => {
   const set = (showInput: boolean) => {
     setShowInput(showInput)
@@ -12,8 +14,9 @@ const Title: FC<IProps> = ({
 
   return (
     <div className='title-bar'>
+      <img className='setting-icon' src={settingImg} alt='' onClick={() => setElement(1)} />
       <span>uyou ToDo</span>
-      <img src={plusImg} alt='' onClick={() => set(true)} />
+      <img className='plus-icon' src={plusImg} alt='' onClick={() => set(true)} />
     </div>
   );
 }

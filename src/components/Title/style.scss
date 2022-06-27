@@ -21,7 +21,6 @@
     position: absolute;
     width: 30px;
     height: 30px;
-    right: 10px;
     cursor: pointer;
 
     &:hover {
@@ -31,5 +30,16 @@
     &:active {
       background-color: #00000020;
     }
+  }
+
+  .setting-icon {
+    left: 10px;
+    width: 22px;
+    height: 22px;
+    padding: 4px;
+  }
+
+  .plus-icon {
+    right: 10px;
   }
 }

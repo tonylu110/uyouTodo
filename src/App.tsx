@@ -1,22 +1,27 @@
 import { useState } from 'react'
 import './App.css'
-import Title from "./components/Title";
-import List from "./components/List";
+import Home from './pages/Home'
+import Setting from './pages/Setting'
 
 function App() {
-  const [showInput, setShowInput] = useState(false)
-  const [todoTime, setTodoTime] = useState(1)
+  const [current, setCurrent] = useState(0)
 
-  const complete = (showInput: boolean): void => {
-    setShowInput(showInput)
-    setTodoTime(new Date().getTime())
+  const setElement = () => {
+    switch (current) {
+      case 0: 
+        return <Home setElement={(e: number) => setCurrent(e)} />
+      case 1:
+        return <Setting />
+      default:
+        return null
+    }
   }
-
   return (
-    <div className="App">
-      <Title setShowInput={complete} />
-      <List showInput={showInput} setShowInput={complete} todoTime={todoTime} />
-    </div>
+    <>
+      {
+        setElement()
+      }
+    </>
   )
 }
 
