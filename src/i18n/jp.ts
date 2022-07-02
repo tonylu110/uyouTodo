@@ -5,6 +5,7 @@ const cancelText = 'キャンセル'
 const copyText = 'コピー'
 const copyToast = '正常にコピー'
 const settingTitleText = '設定'
+const setLangText = '自動'
 const firstLoadData: ITodoList[] = [
     {
         text: 'uyou ToDoの使用へようこそ',
@@ -34,5 +35,6 @@ export default {
     copyText,
     copyToast,
     firstLoadData,
-    settingTitleText
+    settingTitleText,
+    setLangText
 }

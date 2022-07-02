@@ -5,6 +5,7 @@ const cancelText = 'Cancel'
 const copyText = 'Copy'
 const copyToast = 'Copy successfully'
 const settingTitleText = 'Setting'
+const setLangText = 'Auto'
 const firstLoadData: ITodoList[] = [
     {
         text: 'Welcome to use uyou ToDo',
@@ -34,5 +35,6 @@ export default {
     copyText,
     copyToast,
     firstLoadData,
-    settingTitleText
+    settingTitleText,
+    setLangText
 }

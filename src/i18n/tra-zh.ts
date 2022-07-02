@@ -5,6 +5,7 @@ const cancelText = '取消'
 const copyText = '複製'
 const copyToast = '複製成功'
 const settingTitleText = '設定'
+const setLangText = '跟隨系統'
 const firstLoadData: ITodoList[] = [
     {
         text: '歡迎使用 uyou ToDo',
@@ -34,5 +35,6 @@ export default {
     copyText,
     copyToast,
     firstLoadData,
-    settingTitleText
+    settingTitleText,
+    setLangText
 }
