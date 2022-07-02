@@ -1,9 +1,27 @@
 .lang-menu {
   width: 160px;
-  padding: 20px;
+  padding: 10px;
   background-color: white;
   position: absolute;
   box-shadow: 0 0 10px #00000030;
   z-index: 1;
   border-radius: 7px;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+
+  div {
+    padding: 10px;
+    background-color: #00000000;
+    border-radius: 5px;
+    cursor: pointer;
+
+    &:hover {
+      background-color: #00000010;
+    }
+
+    &:active {
+      background-color: #00000030;
+    }
+  }
 }
