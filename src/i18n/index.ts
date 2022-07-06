@@ -2,6 +2,7 @@ import cn from "./cn";
 import traZh from "./tra-zh";
 import en from "./en";
 import jp from "./jp";
+import es from "./es";
 
 const i18n = () => {
     let jsSrc: string
@@ -17,6 +18,8 @@ const i18n = () => {
         return traZh
     } else if (jsSrc.indexOf('ja') != -1) {
         return jp
+    } else if (jsSrc.indexOf('es') != -1) {
+        return es
     } else {
         return en
     }

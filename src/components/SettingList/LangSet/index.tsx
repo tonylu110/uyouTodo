@@ -16,6 +16,7 @@ const LangSet: FC<IProps> = ({
     <div className="lang-menu">
       <div onClick={() => menuClick('withSystem')}>{i18n().setLangText}</div>
       <div onClick={() => menuClick('en')}>English</div>
+      <div onClick={() => menuClick('es')}>Español</div>
       <div onClick={() => menuClick('zh-cn')}>中文（简体）</div>
       <div onClick={() => menuClick('zh-tw')}>中文（繁體）</div>
       <div onClick={() => menuClick('ja')}>日本語</div>
