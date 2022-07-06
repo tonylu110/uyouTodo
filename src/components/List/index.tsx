@@ -1,4 +1,4 @@
-import React, {FC, useState} from 'react';
+import { FC, useState } from 'react';
 import './style.scss';
 import Item from "./Item";
 import IProps from "./IProps";
@@ -9,6 +9,8 @@ import IToDoListData from "../../interface/IToDoListData";
 import moment from "moment";
 import getOkStyle from './Item/getOkStyle';
 import i18n from '../../i18n';
+import cancelImg from '../../images/cancel.png'
+import addImg from '../../images/add.png'
 
 const List: FC<IProps> = ({
   showInput,
@@ -86,8 +88,8 @@ const List: FC<IProps> = ({
           <div className='add-time-area'>
             <span>{moment(todoTime).format('hh:mm A')}</span>
             <div className='buttons'>
-              <div className='ok-button' style={{opacity: showOkButton}} onClick={addTodo}>{i18n().addText}</div>
-              <div className='cancel-button' onClick={cancel}>{i18n().cancelText}</div>
+              <div className='ok-button' title={i18n().addText} style={{opacity: showOkButton}} onClick={addTodo}><img src={addImg} alt='' /></div>
+              <div className='cancel-button' title={i18n().cancelText} onClick={cancel}><img src={cancelImg} alt="" /></div>
             </div>
           </div>
           <textarea className='add-item-text' rows={4} onKeyUp={(e) => onKeyUp(e)}></textarea>
